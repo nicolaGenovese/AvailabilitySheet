@@ -214,9 +214,9 @@ function downloadPDF() {
       doc.circle(MARGIN + 2, y - 2, 1.5, 'F');
 
       // Dish name
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(9);
-      doc.setTextColor(...(item.available ? [220, 210, 200] : [130, 120, 110]));
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10.5);
+      doc.setTextColor(0, 0, 0);
       doc.text(dish, MARGIN + 6, y);
 
       // Status

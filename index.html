@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu </title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- jsPDF (PDF generation) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="header-title">Menu Availability</div>
+    <div class="header-sub">Kitchen availability board</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <div id="live-clock">
+      <div class="date-line" id="clock-date">—</div>
+      <div id="clock-time">—</div>
+    </div>
+    <button class="dl-btn" onclick="downloadPDF()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download PDF
+    </button>
+  </div>
+</header>
+
+<main id="menu-root"></main>
+
+<footer>
+  <span class="footer-note">Green switch = available · Red = unavailable</span>
+  <span class="footer-note">Dishes are saved automatically</span>
+</footer>
+
+<!-- Data (menu items) — modifica solo questo file per aggiornare i piatti -->
+<script src="menu-data.js"></script>
+
+<!-- App logic -->
+<script src="menu.js"></script>
+
+</body>
+</html>

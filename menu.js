@@ -235,9 +235,9 @@ function downloadPDF() {
       if (item.note) {
         y += 4;
         checkY(6);
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(8.5);
-        doc.setTextColor(35, 35, 35);
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(9.5);
+        doc.setTextColor(192, 57, 43);
         const noteLines = doc.splitTextToSize(`Note: ${item.note}`, COL_W - 10);
         doc.text(noteLines, MARGIN + 6, y);
         y += noteLines.length * 4;

@@ -17,6 +17,12 @@ function saveState() {
   try { localStorage.setItem('menuState', JSON.stringify(state)); } catch (e) {}
 }
 
+function resetMenuState() {
+  state = {};
+  saveState();
+  render();
+}
+
 function getItem(cat, dish) {
   const k = makeKey(cat, dish);
   if (!state[k]) state[k] = { available: true, note: '' };

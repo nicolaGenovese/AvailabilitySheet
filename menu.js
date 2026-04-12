@@ -187,7 +187,7 @@ function downloadPDF() {
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
   doc.setTextColor(120, 110, 100);
-  doc.text(`Generated: ${dateStr}`, MARGIN, y);
+  doc.text(`Date: ${dateStr}`, MARGIN, y);
   y += 10;
 
   doc.setDrawColor(60, 50, 40);

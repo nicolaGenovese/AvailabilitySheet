@@ -59,7 +59,8 @@ const MENU = [
       "Eton Mess",
       "Lemon Posset",
       "Chocolate Cake",
-      "Affogato"
+      "Affogato",
+      "Ice Cream (Vanilla, Chocolate, Honeycomb, Salted Caramel)"
     ]
   },
   {
@@ -95,6 +96,20 @@ const MENU = [
       "Garlic and Rosemary Potatoes",
       "Creamed Leeks",
       "Braised Red Cabbage, Sausage Bacon Stuffing"
+    ]
+  },
+  {
+    category: "Staff Menu",
+    tag: null,
+    items: [
+      "Jacket potato",
+      "Mac n cheese, crumbled bacon",
+      "Beef ragu pasta",
+      "Tomato Pasta Cheese",
+      "Pepperoni Pizza Slice",
+      "Margarita Pizza Slice",
+      "Veggie Pizza Slice",
+      "Onion Bhaji Burger"
     ]
   }
 ];

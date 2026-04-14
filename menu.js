@@ -52,7 +52,7 @@ function render() {
       color: #6b6358;
       letter-spacing: 0.08em;
     `;
-    banner.innerHTML = `<span style="font-size:1rem;">🕐</span> <span>The <strong style="color:#c9a84c">Sunday Roast</strong> and <strong style="color:#c9a84c">Sunday Sides</strong> sections are only visible on Sundays.</span>`;
+    banner.innerHTML = `<span style="font-size:1rem;">🕐</span> <span>Sections tagged <strong style="color:#c9a84c">sunday</strong> are only visible on Sundays, including <strong style="color:#c9a84c">Sunday Roast</strong>, <strong style="color:#c9a84c">Sunday Sides</strong>, and <strong style="color:#c9a84c">Staff Menu</strong>.</span>`;
     root.appendChild(banner);
   }
 

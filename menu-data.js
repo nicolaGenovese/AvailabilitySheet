@@ -109,7 +109,8 @@ const MENU = [
       "Pepperoni Pizza Slice",
       "Margarita Pizza Slice",
       "Veggie Pizza Slice",
-      "Onion Bhaji Burger"
+      "Onion Bhaji Burger",
+      "Roast Chicken"
     ]
   }
 ];

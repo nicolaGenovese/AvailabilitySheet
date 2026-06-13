@@ -29,15 +29,28 @@ function getItem(cat, dish) {
   return state[k];
 }
 
+function isSectionVisible(section, date = new Date()) {
+  const day = date.getDay();
+  const isSunday = day === 0;
+  const isWeekend = day === 0 || day === 6;
+
+  if (section.hideOnSunday && isSunday) return false;
+  if (section.tag === 'sunday') return isSunday;
+  if (section.tag === 'weekends only') return isWeekend;
+  return true;
+}
+
 // ─── RENDER ───────────────────────────────────────────────────────────────────
 function render() {
   const root = document.getElementById('menu-root');
   root.innerHTML = '';
 
-  const isSunday = new Date().getDay() === 0;
+  const now = new Date();
+  const isSunday = now.getDay() === 0;
+  const sundaySections = MENU.filter(section => section.tag === 'sunday');
 
   // Info banner when sunday sections are hidden
-  if (!isSunday) {
+  if (!isSunday && sundaySections.length > 0) {
     const banner = document.createElement('div');
     banner.style.cssText = `
       background: #1a1814;
@@ -52,13 +65,12 @@ function render() {
       color: #6b6358;
       letter-spacing: 0.08em;
     `;
-    banner.innerHTML = `<span style="font-size:1rem;">🕐</span> <span>Sections tagged <strong style="color:#c9a84c">sunday</strong> are only visible on Sundays, including <strong style="color:#c9a84c">Sunday Roast</strong>, <strong style="color:#c9a84c">Sunday Sides</strong>, and <strong style="color:#c9a84c">Staff Menu</strong>.</span>`;
+    banner.innerHTML = `<span style="font-size:1rem;">🕐</span> <span>The <strong style="color:#c9a84c">Sunday menu</strong> is only visible on Sundays.</span>`;
     root.appendChild(banner);
   }
 
   MENU.forEach(section => {
-    // Sunday-only sections hidden on other days
-    if (section.tag === 'sunday' && !isSunday) return;
+    if (!isSectionVisible(section, now)) return;
 
     const sec = document.createElement('div');
     sec.className = 'category';
@@ -175,7 +187,6 @@ function downloadPDF() {
 
   const addPage  = () => { doc.addPage(); y = 20; };
   const checkY   = (need = 10) => { if (y + need > 280) addPage(); };
-  const isSunday = now.getDay() === 0;
 
   // Title
   doc.setFont('helvetica', 'bold');
@@ -195,7 +206,7 @@ function downloadPDF() {
   y += 8;
 
   MENU.forEach(section => {
-    if (section.tag === 'sunday' && !isSunday) return;
+    if (!isSectionVisible(section, now)) return;
     checkY(16);
 
     // Section header

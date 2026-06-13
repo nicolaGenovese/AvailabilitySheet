@@ -3,114 +3,162 @@
 // Ogni sezione ha:
 //   category : nome della categoria (stringa)
 //   tag       : null | "weekends only" | "sunday"  → controlla visibilità
+//   hideOnSunday : true  → nasconde la sezione quando è domenica
 //   items     : array di stringhe con i nomi dei piatti
 // ─────────────────────────────────────────────────────────────────────────────
 
 const MENU = [
   {
-    category: "Small Plates",
+    category: "While You Wait",
     tag: null,
+    hideOnSunday: true,
     items: [
-      "Onion Bhajis",
-      "Curried Lamb Leg Kebabs",
-      "Loaded Tater Tots",
-      "Cheeseburger Tacos",
-      "Halloumi with Jerk Gravy",
-      "Bang Bang Cauliflower",
-      "Lamb Shoulder Sliders",
-      "Beef Burger Sliders",
-      "Cheesy Truffle Fries"
+      "Nocellara Olives",
+      "Toasted Focaccia"
     ]
   },
   {
-    category: "Mains",
+    category: "Starters",
     tag: null,
+    hideOnSunday: true,
     items: [
-      "Cyder Battered Haddock & Triple Cooked Chips",
-      "Hertfordshire Chicken Caesar Salad",
-      "Loaded Nachos",
-      "Jacket Potato",
-      "Hot Dog"
+      "Spinach & Watercress Soup",
+      "Isle of Wight Tomato Salad",
+      "Fried Cornish Whitebait",
+      "Garlic & Chilli Butter King Prawns",
+      "Chicken Wings",
+      "Chicken Liver Pate",
+      "Cumberland Sausage Roll",
+      "The Bull Traditional Scotch Egg",
+      "Pea & Wild Garlic Hummus"
     ]
   },
   {
-    category: "Pizza Slices",
-    tag: "weekends only",
-    items: [
-      "Pepperoni Slice",
-      "Margherita Slice",
-      "Veggie Slice"
-    ]
-  },
-  {
-    category: "Wings",
+    category: "Sharers",
     tag: null,
+    hideOnSunday: true,
     items: [
-      "Lemon & Herb",
-      "Honey Glaze",
-      "Gochujang Barbecue",
-      "Mango & Scotch Bonnet"
+      "Loaded Fries",
+      "1kg Chicken Wing Board",
+      "The Bull Butchers Board"
     ]
   },
   {
-    category: "Desserts",
+    category: "Classics",
     tag: null,
+    hideOnSunday: true,
     items: [
-      "Eton Mess",
-      "Lemon Posset",
-      "Chocolate Cake",
-      "Affogato",
-      "Ice Cream (Vanilla, Chocolate, Honeycomb, Salted Caramel)"
+      "Country Burger & Fries",
+      "Signature Burger & Fries",
+      "Plant Country Burger & Fries",
+      "Traditional British Fish & Chips",
+      "Cumberland Sausage & Mash",
+      "28 Day Dry Aged British 8oz Sirloin Steak",
+      "Taragon & King Prawn Fish Pie",
+      "Classic Shepherds Pie",
+      "Honey Roast Ham, Eggs & Chips",
+      "Hertfordshire Grilled Chicken Caesar Salad",
+      "Crispy Chicken Schnitzel",
+      "Crispy Cauliflower Salad"
     ]
   },
   {
-    category: "Buns",
+    category: "Sides",
     tag: null,
+    hideOnSunday: true,
     items: [
-      "Short Rib & Brisket British Beef Burger",
-      "Plant Burger",
-      "Chicken Breast Burger",
-      "Hot Chicken Breast Burger",
-      "Smashed Beef Burger",
-      "Hot Smashed Beef Burger",
-      "Onion Bhaji Burger"
+      "Fries",
+      "Triple Cooked Chips",
+      "Garlic & Parsley Buttered Jersey Royals",
+      "Cider Battered Onion Rings",
+      "Charred Tenderstem Broccoli, Toasted Almonds",
+      "Isle of White Tomato and Onion Salad",
+      "Grilled Courgette, Mint, Citronette Dressing"
     ]
   },
   {
-    category: "Sunday Roast",
+    category: "Puddings",
+    tag: null,
+    hideOnSunday: true,
+    items: [
+      "Mint Macerated Strawberries",
+      "Toasted Hazelnut Banana Split",
+      "Chocolate Brownie",
+      "Sticky Toffee Pudding",
+      "Selection of Ice Cream",
+      "Affogato"
+    ]
+  },
+  {
+    category: "While You Wait",
     tag: "sunday",
     items: [
-      "Chicken Roast",
-      "Beef Roast",
-      "Pork Belly",
-      "Vegan Wellington",
-      "The Ultimate Roast"
+      "Nocellara Olives",
+      "Toasted Focaccia"
     ]
   },
   {
-    category: "Sunday Sides",
+    category: "Starters",
+    tag: "sunday",
+    items: [
+      "Spinach & Watercress Soup",
+      "Pea & Wild Garlic Hummus",
+      "Isle of Wight Tomato Salad",
+      "Fried Cornish Whitebait",
+      "Garlic & Chilli Butter King Prawns",
+      "Chicken Wings",
+      "Chicken Liver Pate",
+      "Cumberland Sausage Roll",
+      "The Bull Traditional Scotch Egg"
+    ]
+  },
+  {
+    category: "The Bull Sunday Roast",
+    tag: "sunday",
+    items: [
+      "28 Day Dry Aged Rump of Beef",
+      "Dingley Dell Pork Belly",
+      "Roast Trio Board to Share for Two/Three",
+      "Walnut Nut Roast",
+      "Roast Sutton Hoo Chicken"
+    ]
+  },
+  {
+    category: "Classics",
+    tag: "sunday",
+    items: [
+      "Country Burger & Fries",
+      "Plant Country Burger",
+      "Traditional British Fish & Chips",
+      "Hertfordshire Grilled Chicken Caesar Salad",
+      "Cumberland Sausage & Mash",
+      "Crispy Cauliflower Salad"
+    ]
+  },
+  {
+    category: "Sides",
     tag: "sunday",
     items: [
       "Cauliflower Cheese",
-      "Sunday Yorkshire Pudding, Gravy",
-      "Garlic and Rosemary Potatoes",
-      "Creamed Leeks",
-      "Braised Red Cabbage, Sausage Bacon Stuffing"
+      "Garlic & Rosemary Roast Potatoes",
+      "Garlic & Parsley Buttered Jersey Royals",
+      "Fries",
+      "Hand Cut Triple Cooked Chips",
+      "Cider Battered Onion Rings",
+      "Isle of White Tomato and Onion Salad",
+      "Charred Tenderstem Broccoli, Toasted Almonds"
     ]
   },
   {
-    category: "Staff Menu",
-    tag: null,
+    category: "Puddings",
+    tag: "sunday",
     items: [
-      "Jacket potato",
-      "Mac n cheese, crumbled bacon",
-      "Beef ragu pasta",
-      "Tomato Pasta Cheese",
-      "Pepperoni Pizza Slice",
-      "Margarita Pizza Slice",
-      "Veggie Pizza Slice",
-      "Onion Bhaji Burger",
-      "Roast Chicken"
+      "Mint Macerated Strawberries",
+      "Toasted Hazelnut Banana Split",
+      "Chocolate Brownie",
+      "Sticky Toffee Pudding",
+      "Selection of Ice Cream",
+      "Affogato"
     ]
   }
 ];
